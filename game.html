@@ -7,22 +7,28 @@
 </head>
 <body>
 
-<nav class="navbar">
-  <ul class="navbar-list">
-    <li class="homepage"><a rel="index" href="index.html">Home</a></li>
-    <li class="game-list"><a rel="next" href="game_list.html">Game List</a></li>
-  </ul>
-</nav>
-
-<div class= "game-data">
-  <h1 class= "page-title">Game 1</h1>  
-
-  <p class ="description">Description Coming Soon!</p>
-</div>
+<div itemscope
+     itemtype = "http://schema.org/WebPage">
+  <nav class="navbar">
+    <ul class="navbar-list">
+      <li class="homepage"><a itemprop = "URL" rel="index" href="index.html">Home</a></li>
+      <li class="game-list"><a itemprop = "URL"rel="next" href="game_list.html">Game List</a></li>
+    </ul>
+  </nav>
   
-<div>
-  <h4 class = "reviews"><a rel="collection" href="review_list.html">Reviews For This Game</a></h4>
-</div>
+  <div class= "game-data"
+       itemscope
+       itemtype = "http://schema.org/VideoGame">
+    <h1 itemprop = "name" class= "page-title">Game 1</h1>  
+
+    <p itemprop = "description" class ="description">Description Coming Soon!</p>
+  </div>
+
   
+  <div>
+    <h4 class = "reviews"><a itemprop = "URL" rel="collection" href="review_list.html">Reviews For This Game</a></h4>
+  </div>
+  
+ </div>
 </body>
 </html>
