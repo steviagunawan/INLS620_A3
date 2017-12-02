@@ -19,9 +19,12 @@
      itemtype = "http://schema.org/WebPage"
      itemref = "">
   <h1 itemprop = "headline" class = "page-title">User Profile</h1>
-  <-- can we use headline/do we need microdata for headers? -->
+  <!-- can we use headline/do we need microdata for headers? -->
   
-  <img itemprop = "image" class = "user-photo" src="http://cdn1-www.dogtime.com/assets/uploads/2011/03/puppy-development-300x200.jpg" alt="User Photo">
+  <div itemscope
+       itemtype = "http://schema.org/ProfilePage">
+    <img itemprop = "image" class = "user-photo" src="http://cdn1-www.dogtime.com/assets/uploads/2011/03/puppy-development-300x200.jpg" alt="User Photo">
+  </div>
   <div class="biodata">
     <h4 itemprop = "headline" class = "about">About</h4>
     <div itemscope
@@ -34,19 +37,21 @@
 
 </div>
   
-<div>
+<div itemscope
+     itemtype = "http://schema.org/URL">
   <h4 class ="user-review">Reviews</h4>
   <ul>
-    <li><a rel="item" href="review.html">Review 1</a></li>
-    <li><a rel="item" href="review.html">Review 2</a></li>
+    <li><a itemprop = "URL" rel="item" href="review.html">Review 1</a></li>
+    <li><a itemprop = "URL" rel="item" href="review.html">Review 2</a></li>
   </ul>
 </div>
 
-<div>
+<div itemscope
+     itemtype = "http://schema.org/URL">
   <h4 class ="all-accounts">All Accounts</h4>
   <ul>
-    <li class = "all-users"><a rel="related" href="user_account.html">All Users</a></li>
-    <li class = "banned-users"><a rel="related" href="banned_account.html">Banned Users</a></li>
+    <li class = "all-users"><a  itemprop = "URL" rel="related" href="user_account.html">All Users</a></li>
+    <li class = "banned-users"><a itemprop = "URL" rel="related" href="banned_account.html">Banned Users</a></li>
   </ul>
 </div>
 
