@@ -6,7 +6,7 @@
 <title>Home Page</title>
 </head>
 <body>
-
+  
 <nav class="navbar">
   <ul class="navbar-list">
     <li class="homepage"><a rel="index" href="index.html">Home</a></li>
@@ -14,16 +14,22 @@
   </ul>
 </nav>
 
-<div class = "user-data">
-  <h1 class = "page-title">User Profile</h1>
-
-  <img class = "user-photo" src="http://cdn1-www.dogtime.com/assets/uploads/2011/03/puppy-development-300x200.jpg" alt="User Photo">
-  <div class="biodata">
-    <h4 class = "about">About</h4>
-    <ol>
-      <li>Name</li>
-      <li>Bio</li>
-    </ol>
+<div itemscope 
+     class = "user-data"
+     itemtype = "http://schema.org/WebPage"
+     itemref = "">
+  <h1 itemprop = "headline" class = "page-title">User Profile</h1>
+  
+  <div itemscope
+       itemtype = "http://schema.org/ProfilePage">
+    <img itemprop = "image" class = "user-photo" src="http://cdn1-www.dogtime.com/assets/uploads/2011/03/puppy-development-300x200.jpg" alt="User Photo">
+    <div class="biodata">
+      <h4 class = "about">About</h4>
+      <ol>
+        <li itemprop = "name">Name</li>
+        <li itemprop = "description" >Bio</li>
+      </ol>
+    </div>
   </div>
 
 </div>
