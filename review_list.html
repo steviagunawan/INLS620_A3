@@ -19,11 +19,17 @@
   <h1 itemprop = "headline" class = "page-title">Game 1 Reviews</h1>  
 
   <div itemscope
-       itemtype = "http://schema.org/Review">
-    <h4 itemprop = "headline" class= "game-review">Reviews For This Game</h4>
+       itemtype = "http://schema.org/ItemList">
+    <h4 itemprop = "name" class= "game-review">Reviews For This Game</h4>
     <ul>
-      <li><a itemprop = "URL" rel="item" href="review.html">Review 1</a></li>
-      <li><a itemprop = "URL" rel="item" href="review.html">Review 2</a></li>
+      <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
+        <a itemprop = "URL" rel="item" href="review.html">Review 1</a>
+        <meta = itemprop = "position" content = "1">
+      </li>
+      <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
+        <a itemprop = "URL" rel="item" href="review.html">Review 2</a>
+        <meta = itemprop = "position" content = "2">
+      </li>
     </ul>
   </div>
 
