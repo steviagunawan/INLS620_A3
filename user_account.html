@@ -7,30 +7,39 @@
 </head>
 <body>
 
-<nav class="navbar">
-  <ul class="navbar-list">
-    <li class="homepage"><a rel="index" href="index.html">Home</a></li>
-    <li class="game-list"><a rel="next" href="game_list.html">Game List</a></li>
-  </ul>
-</nav>
+<div itemscope itemtype = "http://schema.org/WebPage">
+  <nav class="navbar">
+    <ul class="navbar-list">
+      <li class="homepage"><a itemprop = "URL" rel="index" href="index.html">Home</a></li>
+      <li class="game-list"><a itemprop = "URL" rel="next" href="game_list.html">Game List</a></li>
+    </ul>
+  </nav>
 
-<h1 class = "page-title">Users Account</h1>  
-  
-<div class="users">
-  <ul>
-    <li><a rel="item" href="index.html">User 1</a></li>
-    <li><a rel="item" href="index.html">User 2</a></li>
-  </ul>
+  <div itemscope itemtype = "schema.org/ItemList">
+  <h1 itemprop = "name" class = "page-title">Users Account</h1>  
+
+  <div class="users">
+    <ul>
+      <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
+        <a itemprop = "URL" rel="item" href="index.html">User 1</a>
+        <meta itemprop = "position" content = "1">
+      </li>
+      <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
+        <a itemprop = "URL" rel="item" href="index.html">User 2</a>
+        <meta itemprop = "position" content = "2">
+      </li>
+    </ul>
+  </div>
+
+  <form class = "post-user" method = "POST">
+    <h4>Add a New User</h4>
+    Name:<br>
+    <input type="text" name="name"><br>
+    Link to the New User:<br>
+    <input type="text" name="link"><br>
+    <input type="submit" value="Submit">
+  </form>
+
 </div>
-
-<form class = "post-user" method = "POST">
-  <h4>Add a New User</h4>
-  Name:<br>
-  <input type="text" name="name"><br>
-  Link to the New User:<br>
-  <input type="text" name="link"><br>
-  <input type="submit" value="Submit">
-</form>
-
 </body>
 </html>
