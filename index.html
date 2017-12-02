@@ -19,17 +19,17 @@
      itemtype = "http://schema.org/WebPage"
      itemref = "">
   <h1 itemprop = "headline" class = "page-title">User Profile</h1>
+  <-- can we use headline/do we need microdata for headers? -->
   
-  <div itemscope
-       itemtype = "http://schema.org/ProfilePage">
-    <img itemprop = "image" class = "user-photo" src="http://cdn1-www.dogtime.com/assets/uploads/2011/03/puppy-development-300x200.jpg" alt="User Photo">
-    <div class="biodata">
-      <h4 class = "about">About</h4>
-      <ol>
-        <li itemprop = "name">Name</li>
-        <li itemprop = "description" >Bio</li>
-      </ol>
-    </div>
+  <img itemprop = "image" class = "user-photo" src="http://cdn1-www.dogtime.com/assets/uploads/2011/03/puppy-development-300x200.jpg" alt="User Photo">
+  <div class="biodata">
+    <h4 itemprop = "headline" class = "about">About</h4>
+    <div itemscope
+         itemtype = "http://schema.org/ProfilePage"
+    <ol>
+      <li itemprop = "name">Name</li>
+      <li itemprop = "description" >Bio</li>
+    </ol>
   </div>
 
 </div>
