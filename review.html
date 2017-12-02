@@ -7,27 +7,34 @@
 </head>
 <body>
 
-<nav class="navbar">
+<nav itemscope
+     class="navbar"
+     itemtype = "http://schema.org/URL?>
   <ul class="navbar-list">
-    <li class="homepage"><a rel="index" href="index.html">Home</a></li>
-    <li class="game-list"><a rel="next" href="game_list.html">Game List</a></li>
+    <li class="homepage"><a itemprop = "URL" rel="index" href="index.html">Home</a></li>
+    <li class="game-list"><a itemprop = "URL" rel="next" href="game_list.html">Game List</a></li>
   </ul>
 </nav>
 
-<div class = "review-data">
+<div itemscope 
+     class = "review-data"
+     itemtype = "http://schema.org/WebPage">
   <h1 class = "page-title">Game 1: Review 1</h1>  
-
-  <div class = "ind-review">
-    <h4>Review:</h4>
-    <p class = "review-text">
-      Coming Soon!
-    </p>
-    <p>
-       written by: User Name
-    </p>
-  </div>
-  
 </div>
+                          
+<div itemscope
+     class = "ind-review"
+     itemtype = "http://schema.org/Review">
+                                          
+  <h4>Review:</h4>
+  <p class = "review-text">
+    Coming Soon!
+  </p>
+  <p>
+     written by: User Name
+  </p>
+</div>
+  
   
 <form class = "update-review" method = "PUT">
   <h4>Update your review</h4>
