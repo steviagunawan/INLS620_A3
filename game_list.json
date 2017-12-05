@@ -1,0 +1,14 @@
+{
+  "Game List": 
+    [
+        {
+            "name" : "Battleground",
+            "link" : "/game/battleground"
+        },
+        
+        {
+            "name" : "League of Legends",
+            "link" : "/game/leageOfLegends"
+        }
+    ]
+}

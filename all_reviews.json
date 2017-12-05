@@ -1,0 +1,18 @@
+{
+  "All Reviews": 
+    [
+        {
+            "game name" : "Game 1",
+            "text" : "This game is fun!",
+            "author": "Mark Twain",
+            "date": "12/4/17"
+        },
+        
+        {
+            "game name" : "Game 2",
+            "text" : "This game is not fun!",
+            "author": "Jane Austin",
+            "date": "11/9/17"
+        }
+    ]
+}
