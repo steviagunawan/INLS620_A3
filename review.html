@@ -9,7 +9,7 @@
 
 <div itemscope
      itemtype = "http://schema.org/WebPage">
-     
+
      <nav class="navbar">
        <ul class="navbar-list">
          <li class="homepage"><a itemprop = "URL" rel="index" href="index.html">Home</a></li>
@@ -17,37 +17,55 @@
        </ul>
      </nav>
 
-     <div itemscope 
+     <div itemscope
           class = "review-data"
           itemtype = "http://schema.org/Review">
-       <h1 itemprop = "headline" class = "page-title">Game 1: Review 1</h1>  
+       <h1 itemprop = "headline" class = "page-title">Game 1: Review 1</h1>
 
           <div class = "ind-review">
 
-            <h4 itemprop = "name" >Review:</h4>
+            <h4 itemprop = "name" >{{reviews.name}}</h4>
             <p itemprop = "review" class = "review-text">
-              Coming Soon!
+              {{reviews.text}}
             </p>
             <p itemprop = "author">
-               written by: User Name
+               written by: {{reviews.author}}
+                date: {{reviews.date}}
             </p>
           </div>
        </div>
      <!-- errors in the review?? -->
 
 
-     <form class = "update-review" method = "PUT">
+     <form class = "update-review" method = "PATCH">
        <h4>Update your review</h4>
-       Username:<br>
-       <input type="text" name="username"><br>
+       <!--Username:<br>-->
+       <!--<input type="text" name="username"><br>-->
        Update review:<br>
        <input type="text" name="review"><br>
-       <input type="submit" value="Submit">
+       <input class = "update" id= "update-review-button" type="submit" value="Submit">
      </form>
+    <script>
+        var form = document.querySelector('form.update-review');
+        var button = document.querySelector('form.update-review input.update');
+
+        button.addEventListener('click', function (event) {
+          event.preventDefault();
+          var request = new XMLHttpRequest();
+          request.open('PATCH', window.location.pathname);
+          request.onreadystatechange = function () {
+            if (XMLHttpRequest.DONE === request.readyState
+                && 200 === request.status) {
+              window.location.reload(true);
+            }
+          }
+          request.send(new FormData(form));
+        }, false);
+    </script>
 
      <div>
-       <a itemprop = "URL" class = "game-review" rel = "prev" href="review_list.html">Back to Game 1 Review List</a>
-     </div>
+        <a itemprop = "URL" class = "game-review" rel = "prev" href="{{ url_for('reviewlist') }}">Back to Game 1 Review List</a>
+    </div>
 </div>
 </body>
 </html>

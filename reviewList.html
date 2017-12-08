@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Game Review List</title>
+</head>
+<body>
+  
+<div itemscope
+     itemtype = "http://schema.org/WebPage">
+  <nav class="navbar">
+    <ul class="navbar-list">
+      <li class="homepage"><a itemprop = "URL" rel="index" href="index.html">Home</a></li>
+      <li class="game-list"><a itemprop = "URL"rel="next" href="game_list.html">Game List</a></li>
+    </ul>
+  </nav>
+
+  <h1 itemprop = "headline" class = "page-title">Game 1 Reviews</h1>  
+
+  <div itemscope
+       itemtype = "http://schema.org/ItemList">
+    <h4 itemprop = "name" class= "game-review">Reviews For This Game</h4>
+    <ul>
+      {% for review_id,review in reviews.items() %}
+      <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
+        <a itemprop = "URL" rel="item" href="/reviews/{{review.review_id}}">{{review.review_name}} for {{review.game_name}}</a>
+        <!--<meta itemprop = "position" content = "1"> -->
+      </li>
+        {% endfor %}
+    </ul>
+  </div>
+
+  <form class="post-review" action="#" method="POST">
+    <h4>Post A Review</h4>
+    Username:<br>
+    <input type="text" name="username"><br>
+    Leave review:<br>
+    <input type="text" name="review"><br>
+    <input class = "update" type="submit" value="Submit">
+    <!-- embedded JavaScript for submitting PATCH instead of POST -->
+  <!--<script>-->
+    <!--var form = document.querySelector('form.post-review');-->
+    <!--var button = document.querySelector('form.post-review input.update');-->
+    <!--button.addEventListener('click', function (event) {-->
+      <!--event.preventDefault();-->
+      <!--var request = new XMLHttpRequest();-->
+      <!--request.open('PATCH', window.location.pathname);-->
+      <!--request.onreadystatechange = function () {-->
+        <!--if (XMLHttpRequest.DONE === request.readyState-->
+            <!--&& 200 === request.status) {-->
+          <!--window.location.reload(true);-->
+        <!--}-->
+      <!--}-->
+      <!--request.send(new FormData(form));-->
+    <!--}, false);-->
+  <!--</script>-->
+  </form>
+
+</div>
+
+</body>
+</html>
